@@ -1,5 +1,7 @@
 .quote {
     position: fixed;
     bottom: 25%;
-    left: 50%;
+}
+.quotetext {
+    width: 75%;
 }

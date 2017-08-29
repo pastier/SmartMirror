@@ -1,5 +1,5 @@
-<div class="quote">
-  <p class="text_quote">
-    quote works!
+<div class="quote" *ngIf="response">
+  <p class="quotetext">
+    {{ response.items[0].title }}
   </p>
 </div>
