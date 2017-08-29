@@ -1,5 +1,7 @@
-<div class="edge">
-  <p>
-    news-sport works!
-  </p>
+<div class="edge"*ngIf="response">
+  <div *ngFor="let respon of response.items; let i=index">
+    <div *ngIf="i<10">
+      <p class="newsshow">{{ trimSportNews(respon.title) }}</p>
+    </div>
+  </div>
 </div>

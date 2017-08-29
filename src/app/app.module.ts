@@ -11,6 +11,7 @@ import { QuoteComponent } from './quote/quote.component';
 
 import { WeatherService } from './weather/weather.service';
 import { NewsService } from './news/news.service';
+import { NewsSportService } from './news-sport/news-sport.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewsService } from './news/news.service';
   ],
   providers: [
     WeatherService,
-    NewsService
+    NewsService,
+    NewsSportService
   ],
   bootstrap: [AppComponent]
 })
