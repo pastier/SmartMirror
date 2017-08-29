@@ -1,0 +1,27 @@
+html, body { height: 100%; margin: 0; padding: 0 }
+div { position: fixed; height: 50% }
+.div1 {
+    width: 50%;
+    top: 0;
+    left: 0;
+}
+.div2 {
+    width: 50%;
+    top: 0;
+    left: 50%;
+}
+.div3 {
+    width: 33%;
+    top: 50%;
+    left: 0;
+}
+.div4 {
+    width: 33%;
+    top: 50%;
+    left: 33%;
+}
+.div5 {
+    width: 33%;
+    top: 50%;
+    left: 66%;
+}

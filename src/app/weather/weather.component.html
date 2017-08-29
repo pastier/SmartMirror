@@ -1,0 +1,23 @@
+<div class="edge" *ngIf="currentWeather && weatherEng && forecastWeather && forecastWeatherEng">
+  <table>
+    <tbody>
+      <tr>
+        <td> <i class="{{getWeatherIcons(weatherEng.weather[0].id)}} currentpic"></i> </td>
+        <td><p class="current-heigt"> {{ currentWeather.main.temp }}<i class="wi wi-celsius"></i> </p></td>
+        <td><p class="desc">  {{ currentWeather.weather[0].description }}</p>
+            <p class="riseset"><i class="wi wi-sunrise"></i> {{ getTime(currentWeather.sys.sunrise) }} <i class="wi wi-sunset"></i> {{ getTime(currentWeather.sys.sunset) }}</p></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tbody>
+      <tr *ngFor="let forecast of forecastWeather.list; let forecastEng of forecastWeatherEng; let i = index">
+        <td> <i class="{{getWeatherIcons(forecastEng.weather[0].id)}} forecastpic"></i> </td>
+        <td><p class="forecast-heigt"> {{ trimTemperature(forecast.temp.day) }}<i class="wi wi-celsius"></i> </p></td>
+        <td><p class="weekday">  {{ forecastDay[i] }}</p>
+            <p class="desc-forecast"> {{ forecast.weather[0].description }}</p></td>
+        <td><p class="forecast-heigt">H: {{ trimTemperature(forecast.temp.max) }} <i class="wi wi-celsius"></i> T: {{ trimTemperature(forecast.temp.min) }} <i class="wi wi-celsius"></i> </p></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
