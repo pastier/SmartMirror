@@ -10,6 +10,7 @@ import { NewsSportComponent } from './news-sport/news-sport.component';
 import { QuoteComponent } from './quote/quote.component';
 
 import { WeatherService } from './weather/weather.service';
+import { NewsService } from './news/news.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,10 @@ import { WeatherService } from './weather/weather.service';
     BrowserModule,
     HttpModule
   ],
-  providers: [WeatherService],
+  providers: [
+    WeatherService,
+    NewsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
