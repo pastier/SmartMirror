@@ -25,8 +25,8 @@ export class WeatherComponent implements OnInit {
   forecastWeatherUrlEng = AppSettings.OPEN_WEATHER_MAP_URL4 + AppSettings.OPEN_WEATHER_MAP_API;
   iconJsonUrl = AppSettings.ICON_JSON;
   fore = this.getNextDays();
-  weekday = ["SONNTAG", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG"];
-  forecastDay = [this.weekday[this.fore[0]], this.weekday[this.fore[1]], this.weekday[this.fore[2]], 
+  weekday = ['SONNTAG', 'MONTAG', 'DIENSTAG', 'MITTWOCH', 'DONNERSTAG', 'FREITAG', 'SAMSTAG'];
+  forecastDay = [this.weekday[this.fore[0]], this.weekday[this.fore[1]], this.weekday[this.fore[2]],
                   this.weekday[this.fore[3]], this.weekday[this.fore[4]]];
 
   constructor(
@@ -65,7 +65,7 @@ export class WeatherComponent implements OnInit {
           (response) => { this.forecastWeather = response; },
           (error) => { console.log('Error happened' + error); },
           () => { }
-        )
+        );
   }
 
   getForecastWeatherEng(url: string): void {
@@ -74,7 +74,7 @@ export class WeatherComponent implements OnInit {
           (response) => { this.forecastWeatherEng = response; },
           (error) => { console.log('Error happened' + error); },
           () => { }
-        )
+        );
   }
 
   getIconJson(): void {
@@ -120,15 +120,15 @@ export class WeatherComponent implements OnInit {
   }
 
   getNextDays(): Array<number> {
-    let d0 = new Date();
+    const d0 = new Date();
     d0.setDate(d0.getDate() + 1);
-    let d1 = new Date();
-    d1.setDate(d1.getDate() +2);
-    let d2 = new Date();
+    const d1 = new Date();
+    d1.setDate(d1.getDate() + 2);
+    const d2 = new Date();
     d2.setDate(d2.getDate() + 3);
-    let d3 = new Date();
+    const d3 = new Date();
     d3.setDate(d3.getDate() + 4);
-    let d4 = new Date();
+    const d4 = new Date();
     d4.setDate(d4.getDate() + 5);
     return [d0.getDay(), d1.getDay(), d2.getDay(), d3.getDay(), d4.getDay()];
   }
