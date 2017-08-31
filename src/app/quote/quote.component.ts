@@ -26,4 +26,11 @@ export class QuoteComponent implements OnInit {
           );
   }
 
+  splitQuote(quote: string): string {
+    return quote.substring(0, quote.indexOf("-"));
+  }
+
+  splitAuthor(quote: string): string {
+    return quote.substring(quote.indexOf("-"), quote.length);
+  }
 }

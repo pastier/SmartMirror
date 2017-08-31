@@ -1,5 +1,6 @@
 <div class="quote" *ngIf="response">
   <p class="quotetext">
-    {{ response.items[0].title }}
+    {{ splitQuote(response.items[0].title) }} <br />
+    {{ splitAuthor(response.items[0].title) }}
   </p>
 </div>

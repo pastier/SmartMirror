@@ -1,7 +1,8 @@
 .quote {
     position: fixed;
-    bottom: 25%;
+    bottom: 20%;
 }
 .quotetext {
-    width: 75%;
+    width: 50%;
+    font-style: italic;
 }
