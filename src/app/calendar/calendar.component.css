@@ -1,3 +1,13 @@
 .edge {
     position: fixed;
 }
+.events {
+    margin: 0 !important;
+}
+.headstop {
+    margin: 0 !important;
+}
+.headsbottom {
+    font-size: 35px;
+    margin: 0 !important;
+}

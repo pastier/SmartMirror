@@ -1,5 +1,20 @@
 <div class="edge">
-  <p>
-    calendar works!
-  </p>
+  <div>
+    <p class="headstop"> {{ formatDate() }} </p>
+    <p class="headsbottom"> {{ whatTime | async | date:'hh:mm' }} </p>
+    <br>
+  </div>
+  <div *ngIf="helloiammoto">
+    <div>
+      <table>
+        <tbody>
+          <tr *ngFor="let hello of helloiammoto.result.items; let i = index">
+            <td><p class="events"> {{ hello.summary }} </p></td>
+            <td *ngIf="hello.start.date"><p class="events"> {{ calcDayDiff(hello.start.date) }} </p></td>
+            <td *ngIf="hello.start.dateTime"><p class="events"> {{ calcDayDiff(hello.start.dateTime) }} </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  
 </div>
