@@ -30,6 +30,10 @@
 .forecastpic {
   font-size: 30px;
 }
+table { /* Will apply to all tables */
+    border-spacing: 0;
+    border-collapse: collapse;
+}
 @font-face {
   font-family: 'weathericons';
   src: url('../../assets/weathericons-regular-webfont.eot');
