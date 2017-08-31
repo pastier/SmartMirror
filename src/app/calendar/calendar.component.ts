@@ -32,7 +32,8 @@ export class CalendarComponent implements OnInit {
         const _self = this;
         this.apiReady = true;
         this.calendarService.listUpcomingEvents().then(
-          response => { _self.helloiammoto = response; }
+          response => { _self.helloiammoto = response; },
+          
         );
     }, err => {
         this.apiFailed = true;
@@ -44,13 +45,15 @@ export class CalendarComponent implements OnInit {
     const weekday = weekdayAr[this.whatDate.getDay()];
     const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
     const month = months[this.whatDate.getMonth()];
-    return weekday + ', ' + this.whatDate.getDay() + '.' + month + '.' + this.whatDate.getFullYear();
+    return weekday + ', ' + this.whatDate.getDate() + '.' + month + ' ' + this.whatDate.getFullYear();
   }
 
   calcDayDiff(date: string): number {
     const oneDay = 24 * 60 * 60 * 1000;
-    const firstDate = new Date();
-    const secondDate = new Date(date);
+    let firstDate = new Date();
+    firstDate.setHours(0, 0, 0);
+    let secondDate = new Date(date);
+    secondDate.setHours(0, 0, 0);
     const diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
     return diffDays;
   }
